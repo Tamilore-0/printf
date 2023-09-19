@@ -13,12 +13,17 @@ int _printf(const char *format, ...)
 
 	va_start(list, format);
 
+	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
+
 	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
 			format++;
-				chars_printed = specifier_selection(format, list, chars_printed);
+			chars_printed = specifier_selection(format, list, chars_printed);
 			format++;
 		}
 		else
