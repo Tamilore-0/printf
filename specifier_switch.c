@@ -21,6 +21,9 @@ int specifier_selection(const char *format, va_list list, int chars_printed)
 		case 'r':
 			chars_printed = printr(list, chars_printed);
 			break;
+		case 'R':
+			chars_printed = printR(list, chars_printed);
+			break;
 		case '%':
 			chars_printed += _putchar('%');
 			break;
@@ -44,10 +47,7 @@ int specifier_selection(const char *format, va_list list, int chars_printed)
 			chars_printed = printb(list, chars_printed);
 			break;
 		default:
-			_putchar('%');
-			_putchar(*format);
-			chars_printed += 2;
+			_putchar('%'), _putchar(*format), chars_printed += 2;
 			break;
-	}
-	return (chars_printed);
+	}	return (chars_printed);
 }

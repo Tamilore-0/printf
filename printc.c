@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 
 /**
  * printc - prints characeter to standard output
@@ -11,8 +12,7 @@ int printc(va_list list, int chars_printed)
 {
 	int c = va_arg(list, int);
 
-	chars_printed += 1;
-	_putchar(c);
+	write(1, &c, 1);
+	chars_printed++;
 	return (chars_printed);
 }
-

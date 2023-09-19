@@ -11,6 +11,9 @@ int prints(va_list list, int chars_printed)
 {
 	char *s = va_arg(list, char *);
 
+	if (*s == '\0')
+		return (-1);
+
 	while (*s != '\0')
 	{
 		_putchar(*s);

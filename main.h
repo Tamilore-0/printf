@@ -21,5 +21,5 @@ int printX(va_list list, int chars_printed);
 int printo(va_list list, int chars_printed);
 int printr(va_list list, int chars_printed);
 int printb(va_list list, int chars_printed);
-int printp(va_list list, int chars_printed);
+int printR(va_list list, int chars_printed);
 #endif
