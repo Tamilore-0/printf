@@ -22,8 +22,7 @@ int specifier_selection(const char *format, va_list list, int chars_printed)
 			chars_printed = printr(list, chars_printed);
 			break;
 		case '%':
-			_putchar('%');
-			chars_printed++;
+			chars_printed += _putchar('%');
 			break;
 		case 'i':
 		case 'd':

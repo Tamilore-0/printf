@@ -26,6 +26,7 @@ int printb(va_list list, int chars_printed)
 		binary[i] = number % 2;
 		number /= 2;
 		i++;
+		chars_printed++;
 	}
 
 	for (j = i - 1; j >= 0; j--)
