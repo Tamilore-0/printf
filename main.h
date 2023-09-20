@@ -4,6 +4,11 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <limits.h>
+#include <unistd.h>
+
+#define F_PLUS 2
+#define F_HASH 4
+#define F_space 8
 
 int _printf(const char *format, ...);
 int _strlen(char *str);
@@ -11,6 +16,8 @@ int _putchar(char c);
 
 
 int specifier_selection(const char *format, va_list list, int chars_printed);
+int print_flags(const char *format, int *);
+int print_printable(char j)
 int printc(va_list list, int chars_printed);
 int prints(va_list list, int chars_printed);
 int printd(va_list list, int chars_printed);
