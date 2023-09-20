@@ -15,8 +15,30 @@
 int _printf(const char *format, ...);
 int _strlen(char *str);
 int _putchar(char c);
+/**
+ * struct frt - Struct op
+ *
+ * @frt: The format.
+ * @fn: The function associated.
+ */
+struct frt
+{
+	char frt;
+	int (*fn)(va_list, char[], int, int, int, int);
+};
 
+/**
+ * typedef struct frt frt_t - Struct op
+ *
+ * @frt: The format.
+ * @frt_t: The function associated.
+ */
+typedef struct frt frt_t;
 
+int fpws_print(const char *frt, int *i,
+va_list list, char buffer[], int flags, int width, int precision, int size);
+
+/* functions */
 int specifier_selection(const char *format, va_list list, int chars_printed);
 int print_flags(const char *format, int *);
 int print_width(const char *format, int *i, va_list list);
