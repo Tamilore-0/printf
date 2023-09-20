@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	_printf("%c %s of %d %r %x ROT13: %R. binary: %b", 'A', "pack", 20, "birds", 98, "Hello, world", 98);
+	_printf("%s", "Aboy on the bedd$.");
 
 	return (0);
 }
